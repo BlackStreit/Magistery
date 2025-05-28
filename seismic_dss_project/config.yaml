@@ -1,0 +1,49 @@
+# Путь к каталогу
+catalog_csv: "data/earthquakes.csv"
+
+# Разбиение на регионы
+regions:
+  - name: "Западная зона"
+    bounds:
+      lat_min: 50.0
+      lat_max: 55.0
+      lon_min: 100.0
+      lon_max: 105.0
+  - name: "Центральная зона"
+    bounds:
+      lat_min: 50.0
+      lat_max: 55.0
+      lon_min: 105.0
+      lon_max: 110.0
+  - name: "Восточная зона"
+    bounds:
+      lat_min: 55.0
+      lat_max: 60.0
+      lon_min: 110.0
+      lon_max: 115.0
+
+# Общие параметры сетки и моделей
+grid_res: 0.10            # шаг сетки (°)
+kde:
+  bandwidth_km: 20
+etas:
+  A: 0.5
+  alpha: 1.0
+  c: 0.01
+  p: 1.1
+  d: 1.0
+  q: 1.5
+  R: 50.0
+  training_end_date: "2006-01-01"
+
+exposure:
+  population_tiff: null
+  cost_tiff:       null
+
+visualization:
+  output_dir: "outputs"
+
+evaluation:
+  enable: true
+  baseline_long_term: true
+  alarm_threshold: 0.005
